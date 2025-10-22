@@ -1,0 +1,40 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main() {
+    SetConsoleOutputCP(1251); 
+    SetConsoleCP(1251);       
+
+    int choice;
+
+    cout << "[ - ] Программа \"Времена года\"" << endl;
+    cout << endl;
+    cout << "[ 1 ] Лето" << endl;
+    cout << "[ 2 ] Осень" << endl;
+    cout << "[ 3 ] Зима" << endl;
+    cout << "[ 4 ] Весна" << endl;
+    cout << endl;
+    cout << "[ - ] Введите значение: ";
+
+    cin >> choice;
+    cout << endl;
+
+    if (choice == 1) {
+        cout << "[ - ] Сейчас лето, можно одеться легко и взять с собой солнцезащитные очки." << endl;
+    }
+    else if (choice == 2) {
+        cout << "[ - ] Сейчас осень, следует одеться тепло и взять с собой зонт." << endl;
+    }
+    else if (choice == 3) {
+        cout << "[ - ] Сейчас зима, нужно одеться очень тепло и не забыть шапку с перчатками." << endl;
+    }
+    else if (choice == 4) {
+        cout << "[ - ] Сейчас весна, можно одеться полегче, но лучше взять с собой ветровку." << endl;
+    }
+    else {
+        cout << "[ - ] Ошибка! Такого времени года нет. Пожалуйста, выберите значение от 1 до 4." << endl;
+    }
+
+    return 0;
+}
