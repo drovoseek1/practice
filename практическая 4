@@ -1,0 +1,44 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+int main() {
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    
+        int userNumber;
+        int programMultiplier = 1;
+        int userAnswer;
+        int correctAnswer;
+
+        // Ввод числа пользователя
+        cout << "[ + ] Введите число: ";
+        cin >> userNumber;
+
+        // Цикл от 1 до 9 для генерации примеров
+        while (programMultiplier <= 9) {
+            // Генерация примера
+            cout << "[ + ] Решите пример: " << userNumber << " x " << programMultiplier << endl;
+            cout << "[ + ] Ответ: ";
+            cin >> userAnswer;
+
+            // Вычисление правильного ответа
+            correctAnswer = userNumber * programMultiplier;
+
+            // Проверка ответа
+            if (userAnswer == correctAnswer) {
+                cout << "[ + ] Пример решен правильно!" << endl;
+                cout << endl;
+                programMultiplier++; // Увеличиваем множитель для следующего примера
+            }
+            else {
+                cout << "[ - ] Ошибка, пример решен неверно!" << endl;
+                return 0; // Завершаем программу при ошибке
+            }
+        }
+
+        // Сообщение об успешном завершении
+        cout << "[ + ] Примеры решены, поздравляем!" << endl;
+
+        return 0;
+    }
