@@ -1,0 +1,102 @@
+#include <iostream>
+#include <string>
+
+using namespace std;    
+int main() {
+    setlocale(0, "");
+
+    int month, day;
+    string monthName;
+    int maxDays = 0;    
+    cout << "[+] Календарь" << endl;
+    cout << "[1] Январь" << endl;
+    cout << "[2] Февраль" << endl;
+    cout << "[3] Март" << endl;
+    cout << "[4] Апрель" << endl;
+    cout << "[5] Май" << endl;
+    cout << "[6] Июнь" << endl;
+    cout << "[7] Июль" << endl;
+    cout << "[8] Август" << endl;
+    cout << "[9] Сентябрь" << endl;
+    cout << "[10] Октябрь" << endl;
+    cout << "[11] Ноябрь" << endl;
+    cout << "[12] Декабрь" << endl;
+    cout << "[+] Выберите месяц: " << endl;     
+
+    cin >> month;
+    switch (month) {
+    case 1:
+        cout << "выбран месяц: январь" << endl;
+        monthName = "января";
+        maxDays = 31;
+        break;
+    case 2:
+        cout << "выбран месяц:февраль" << endl;
+        monthName = "февраля";
+        maxDays = 29;
+        break;
+    case 3:
+        cout << "выбран месяц: март" << endl;
+        monthName = "марта";
+        maxDays = 31;
+        break;
+    case 4:
+        cout << "выбран месяц: апрель" << endl;
+        monthName = "апреля";
+        maxDays = 30;
+        break;
+    case 5:
+        cout << "выбран месяц: май" << endl;
+        monthName = "мая";
+        maxDays = 31;
+        break;
+    case 6:
+        cout << "выбран месяц: июнь" << endl;
+        monthName = "июня";
+        maxDays = 30;
+        break;
+    case 7:
+        cout << "выбран месяц: июль" << endl;
+        monthName = "июля";
+        maxDays = 31;
+        break;
+    case 8:
+        cout << "выбран месяц: август" << endl;
+        monthName = "августа";
+        maxDays = 31;
+        break;
+    case 9:
+        cout << "выбран месяц: сентябрь" << endl;
+        monthName = "сентября";
+        maxDays = 30;
+        break;
+    case 10:
+        cout << "выбран месяц: октябрь" << endl;
+        monthName = "октября";
+        maxDays = 31;
+        break;
+    case 11:
+        cout << "выбран месяц: ноябрь" << endl;
+        monthName = "ноября";
+        maxDays = 30;
+        break;
+    case 12:
+        cout << "выбран месяц: декабрь" << endl;
+        monthName = "декабря";
+        maxDays = 31;
+        break;
+
+    default:
+        cout << "Ошибка! Введено неверное значение месяца." << endl;
+    }
+    
+    cout << "выберите день месяца" << endl;
+    cin >> day;
+    if (day < 1 || day > maxDays) {
+        cout << "ошибка! Введено неверное значение дня.";
+    }
+    cout << endl;
+
+    cout << "[ + ] Календарь: " << day << " " << monthName;
+    return 0;
+}
