@@ -1,12 +1,9 @@
 #include <iostream>
 #include <string>
-#include <windows.h>
 
 using namespace std;    
 int main() {
-
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
+setlocale(0, "");
 
     int month;
 
