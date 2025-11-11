@@ -1,0 +1,59 @@
+м
+#include <iostream>
+
+using namespace std;
+int main() {
+	setlocale(0, "");
+
+	int choice;
+
+
+	cout << "[+] переводчик\n" << endl;
+
+	cout << "[1] русские слова" << endl;
+	cout << "[2] английские слова\n" << endl;
+
+	cout << "[3] выйти" << endl;
+
+	cin >> choice;
+
+	switch (choice) {
+	case 1: {
+		cout << "[+] список русских слов" << endl;
+		cout << "[1] Дом" << endl;
+		cout << "[2] Дорога\n" << endl;
+		int wordChoice;
+		cout << "выберите номер слова" << endl;
+		cin >> wordChoice;
+		cout << endl;
+
+		switch (wordChoice) {
+		case 1: cout << "дом - house" << endl; break;
+		case 2: cout << "дорога - road" << endl; break;
+		default: cout << "неверный номер слова"; break;
+		}
+
+
+	case 2: {
+		cout << "[+] список английских слов" << endl;
+		cout << "[1] House" << endl;
+		cout << "[2] Road\n" << endl;
+		int wordChoice;
+		cout << "выберите номер слова" << endl;
+		cin >> wordChoice;
+
+		switch (wordChoice) {
+		case 1: cout << "house - дом" << endl; break;
+		case 2: cout << "road - дорога" << endl; break;
+		default: cout << "неверный номер слова"; break;
+		}
+
+	case 3: {
+		cout << "выход из программы..."; break;
+	default: "неверный номер пункта меню";
+	}
+	}
+	}
+		  return 0;
+	}
+}
