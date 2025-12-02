@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+
+	float number = -1;
+	float average;
+	float sum = 0.0f;
+		int count = 0;
+		cout << "среднее арифметическое\n";
+		cout << "введи числа\n";
+
+		while (number != 0) {
+			if (!(cin >> number)) {
+				cout << "ошибка ввода\n";
+				return 1;
+			}
+
+			if (number != 0) {
+				sum += number;
+				count++;
+			}
+		}
+
+		if (count > 0) {
+			average = sum / count;
+
+			cout << "среднее арифметическое: " << average << endl;
+	}
+		else {
+			cout << "не было введено чисел для расчета\n";
+		}
+
+	return 0;
+}
