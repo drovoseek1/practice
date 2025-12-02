@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+
+	long long number = 0;
+	int count = 0;
+	cout << "количество цифр в числе\n";
+	cout << "введи целое положительное число: ";
+
+	if (!(cin >> number) || number < 0) {
+		if (number == 0) {
+			count = 1;
+		}
+		else {
+			return 1;
+		}
+	}
+
+	if (number > 0) {
+		while (number > 0) {
+			count++;
+				number = number / 10;
+
+		}
+	}
+
+	cout << "кол-во цифр: " << count << endl;
+
+	return 0;
+}
