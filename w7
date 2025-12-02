@@ -6,20 +6,14 @@ int main() {
 		const string correct_password = "12345";
 		string input_password;
 		
-		cout << "проверка пароля\n";
+		cout << "проверка пароля\nвведите пароль: ";
+		cin >> input_password;
 
-		do {
-			cout << "введите пароль: ";
+		while (input_password != correct_password) {
+			cout << "НЕверный пароль, попробуй еще раз\n";
 			cin >> input_password;
-			if (input_password != correct_password) {
-				cout << "НЕверный пароль\n";
-
-			}
-			
 		}
-		while (input_password != correct_password);
-		cout << "добро пожаловать!";
-		
+		cout << "дорова";
 		
 		return 0;
 }
