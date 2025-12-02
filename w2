@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "");
+
+	int counter = 0;
+
+	cout << "обратный отсчет\n" << "введите число\n";
+
+	if (!(cin >> counter) || counter <= 0) {
+		cout << "ошибка";
+		return 1;
+	}
+	while (counter >= 1) {
+		cout << "отсчет: " << counter << endl;
+		counter--;
+	}
+	cout << "\nстарт\n";
+
+	return 0;
+}
