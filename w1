@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "");
+	int number = -1;
+	int sum = 0;
+
+	cout << "сумматор чисел\n";
+	cout << "введите числа по одному\n";
+
+	while (number != 0) {
+		cout << "введите число\n";
+		if (!(cin >> number)) {
+			cout << "ошибка ввода!";
+		}
+		
+		if (number != 0) {
+			sum += number;
+		}
+	}
+
+	cout << "сумма: " << sum;
+	return 0;
+}
