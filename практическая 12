@@ -1,38 +1,38 @@
 #include <iostream>
 #include <string>
-#include <limits> // Для numeric_limits
-#include <vector> // Для хранения вопросов и ответов
+#include <limits> 
+#include <vector> 
 
 using namespace std;
 
-// Структура для представления вопроса, вариантов ответов и правильного ответа
+
 struct Question {
-    string text;         // Сам вопрос
-    vector<string> options; // Варианты ответов (A, B, C, D)
-    char correctAnswer;  // Буква правильного ответа (A, B, C, D)
+    string text;         
+    vector<string> options; 
+    char correctAnswer;  
 };
 
-// Структура для хранения настроек игры
+
 struct GameSettings {
     string userName;
     int startingLives = 3;
-    // Могут быть добавлены другие настройки, например, сложность
+   
 };
 
 int main() {
-    // Установка кодовой страницы для Windows (если необходимо)
+    
 #ifdef _WIN32
     system("chcp 1251");
 #endif
 
-    // --- Инициализация переменных ---
+    
     int mainMenuChoice = 0;
     bool exitProgram = false;
 
-    GameSettings settings; // Создаем объект настроек
-    settings.userName = "Игрок"; // Имя по умолчанию
+    GameSettings settings; 
+    settings.userName = "Игрок"; 
 
-    // --- Список вопросов для игры ---
+   
     vector<Question> questions = {
         {"Вопрос: Системный язык программирования?",
          {"A) Python", "B) C#", "C) Ruby", "D) C++"},
@@ -214,7 +214,7 @@ int main() {
         else { // Некорректный выбор в главном меню
             cout << "[+] Некорректный выбор. Попробуйте снова." << endl;
         }
-    } // Конец основного цикла while
+    } // Конец
 
     return 0;
 }
