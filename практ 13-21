@@ -10,6 +10,10 @@ int main() {
 	wcout << L"Главное меню:" << endl;
 	wcout << L"1 - линия" << endl;
 	wcout << L"2 - квадрат" << endl;
+	wcout << L"3 - прямоугольник" << endl;	
+	wcout << L"4 - треугольник" << endl;
+	wcout << L"5 - решетка" << endl;
+	wcout << L"6 - крестик" << endl;
 	wcout << L"Выберите фигуру: ";
 	int figure;
 	wcin >> figure;
@@ -24,7 +28,7 @@ int main() {
 
 		wcout << L"Текстура: ";
 		wchar_t symbol;
-		wcin >> symbol;
+		wcin >> symbol;	
 		wcout << L"результат:" << endl;
 		for (int i = 0; i < size; i++) {
 			wcout << symbol << " ";
@@ -60,6 +64,38 @@ int main() {
 			}
 			wcout << endl;
 		}
+	}
+
+	else if (figure == 3) {
+		wcout << L"Фигура: прямоугольник" << endl;
+		wcout << L"1 - заполненный"<< endl;
+		wcout << L"2 - пустой"<< endl;	
+		wcout << L"Выберите тип: ";
+		int type;
+		wcin >> type;
+		wcout << L"Ширина: ";
+		int width;
+		wcin >> width;
+		wcout << L"Высота: ";
+		int height;
+		wcin >> height;
+		wcout << L"Текстура: ";
+		wchar_t symbol;
+		wcin >> symbol;
+
+		wcout << L"Результат: " << endl;
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (type == 1 || i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+					wcout << symbol << L" ";
+				}
+				else {
+					wcout << L"  ";
+				}
+			}
+			wcout << endl;
+		}
+
 	}
 	return 0;
 }
