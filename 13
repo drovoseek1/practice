@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RU");
+	cout << "Главное меню:" << endl;
+	cout << "1 - линия" << endl;
+		cout << "2 - квадрат" << endl;
+		cout << "Выберите фигуру: ";
+		int figure;
+		cin >> figure;
+
+		system("cls");
+
+		if (figure == 1) {
+			cout << "фигура: линия" << endl;
+			cout << "Размер: ";
+				int size;
+			cin >> size;
+
+			cout << "Текстура: ";
+			char symbol;
+			cin >> symbol;
+			cout << "результат:" << endl;
+			for (int i = 0; i < size; i++) {
+				cout << symbol << " ";
+			}
+			cout << endl;
+		}
+
+		else if (figure == 2) {
+			cout << "Фигура: квадрат" << endl;
+			cout << "1 - заполненный" << endl;
+			cout << "2 - пустой" << endl;
+			cout << "Выберите тип: ";
+			int type;
+			cin >> type;
+
+			cout << "Размер: ";
+			int size;
+			cin >> size;
+
+			cout << "Текстура: ";
+			char symbol;
+			cin >> symbol;
+
+			cout << "Результат: " << endl;
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					if (type == 1 || i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+						cout << symbol << " ";
+					}
+					else {
+						cout << "  ";
+					}
+				}
+				cout << endl;
+			}
+		}
+	return 0;
+}
