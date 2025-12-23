@@ -1,63 +1,65 @@
 #include <iostream>
 #include <string>
-
+#include <io.h>
+#include <fcntl.h>
 using namespace std;
 
 int main() {
-	setlocale(LC_ALL, "RU");
-	cout << "Главное меню:" << endl;
-	cout << "1 - линия" << endl;
-		cout << "2 - квадрат" << endl;
-		cout << "Выберите фигуру: ";
-		int figure;
-		cin >> figure;
+	_setmode(_fileno(stdout), _O_U16TEXT);
+	_setmode(_fileno(stdin), _O_U16TEXT);
+	wcout << L"Главное меню:" << endl;
+	wcout << L"1 - линия" << endl;
+	wcout << L"2 - квадрат" << endl;
+	wcout << L"Выберите фигуру: ";
+	int figure;
+	wcin >> figure;
 
-		system("cls");
+	system("cls");
 
-		if (figure == 1) {
-			cout << "фигура: линия" << endl;
-			cout << "Размер: ";
-				int size;
-			cin >> size;
+	if (figure == 1) {
+		wcout << L"фигура: линия" << endl;
+		wcout << L"Размер: ";
+		int size;
+		wcin >> size;
 
-			cout << "Текстура: ";
-			char symbol;
-			cin >> symbol;
-			cout << "результат:" << endl;
-			for (int i = 0; i < size; i++) {
-				cout << symbol << " ";
-			}
-			cout << endl;
+		wcout << L"Текстура: ";
+		wchar_t symbol;
+		wcin >> symbol;
+		wcout << L"результат:" << endl;
+		for (int i = 0; i < size; i++) {
+			wcout << symbol << " ";
 		}
+		wcout << endl;
+	}
 
-		else if (figure == 2) {
-			cout << "Фигура: квадрат" << endl;
-			cout << "1 - заполненный" << endl;
-			cout << "2 - пустой" << endl;
-			cout << "Выберите тип: ";
-			int type;
-			cin >> type;
+	else if (figure == 2) {
+		wcout << L"Фигура: квадрат" << endl;
+		wcout << L"1 - заполненный" << endl;
+		wcout << L"2 - пустой" << endl;
+		wcout << L"Выберите тип: ";
+		int type;
+		wcin >> type;
 
-			cout << "Размер: ";
-			int size;
-			cin >> size;
+		wcout << L"Размер: ";
+		int size;
+		wcin >> size;
 
-			cout << "Текстура: ";
-			char symbol;
-			cin >> symbol;
+		wcout << L"Текстура: ";
+		wchar_t symbol;
+		wcin >> symbol;
 
-			cout << "Результат: " << endl;
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size; j++) {
-					if (type == 1 || i == 0 || i == size - 1 || j == 0 || j == size - 1) {
-						cout << symbol << " ";
-					}
-					else {
-						cout << "  ";
-					}
+		wcout << L"Результат: " << endl;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (type == 1 || i == 0 || i == size - 1 || j == 0 || j == size - 1) {
+					wcout << symbol << L" ";
 				}
-				cout << endl;
+				else {
+					wcout << L"  ";
+				}
 			}
+			wcout << endl;
 		}
+	}
 	return 0;
 }
