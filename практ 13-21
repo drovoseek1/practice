@@ -10,7 +10,7 @@ int main() {
 	wcout << L"Главное меню:" << endl;
 	wcout << L"1 - линия" << endl;
 	wcout << L"2 - квадрат" << endl;
-	wcout << L"3 - прямоугольник" << endl;	
+	wcout << L"3 - прямоугольник" << endl;
 	wcout << L"4 - треугольник" << endl;
 	wcout << L"5 - решетка" << endl;
 	wcout << L"6 - крестик" << endl;
@@ -20,7 +20,7 @@ int main() {
 
 	system("cls");
 
-	if (figure == 1) {
+	if (figure == 1) { // линия
 		wcout << L"фигура: линия" << endl;
 		wcout << L"Размер: ";
 		int size;
@@ -28,7 +28,7 @@ int main() {
 
 		wcout << L"Текстура: ";
 		wchar_t symbol;
-		wcin >> symbol;	
+		wcin >> symbol;
 		wcout << L"результат:" << endl;
 		for (int i = 0; i < size; i++) {
 			wcout << symbol << " ";
@@ -36,7 +36,7 @@ int main() {
 		wcout << endl;
 	}
 
-	else if (figure == 2) {
+	else if (figure == 2) { // квадрат
 		wcout << L"Фигура: квадрат" << endl;
 		wcout << L"1 - заполненный" << endl;
 		wcout << L"2 - пустой" << endl;
@@ -66,10 +66,10 @@ int main() {
 		}
 	}
 
-	else if (figure == 3) {
+	else if (figure == 3) { // прямоугольник
 		wcout << L"Фигура: прямоугольник" << endl;
-		wcout << L"1 - заполненный"<< endl;
-		wcout << L"2 - пустой"<< endl;	
+		wcout << L"1 - заполненный" << endl;
+		wcout << L"2 - пустой" << endl;
 		wcout << L"Выберите тип: ";
 		int type;
 		wcin >> type;
@@ -96,6 +96,38 @@ int main() {
 			wcout << endl;
 		}
 
+	}
+
+	else if (figure == 4) {
+		wcout << L"Фигура: прямоугольник" << endl;
+		wcout << L"1 - заполненный" << endl;
+		wcout << L"2 - пустой" << endl;
+		wcout << L"выберите тип: ";
+		int type;
+		wcin >> type;
+		wcout << L"размер: ";
+		int size;
+		wcin >> size;
+		wcout << L"текстура: ";
+		wchar_t symbol;
+		wcin >> symbol;
+
+		wcout << L"результат: " << endl;
+
+		for (int i = 1; i <= size; i++) {
+			for (int j = 0; j < size - i; j++) {
+				wcout << L" ";
+			}
+			for (int j = 0; j < i; j++) {
+				if (type == 1 || j == 0 || j == i - 1 || i == size) {
+					wcout << symbol << L" ";
+				}
+				else {
+					wcout << L"  ";
+				}
+			}
+			wcout << endl;
+		}
 	}
 	return 0;
 }
