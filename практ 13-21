@@ -133,5 +133,61 @@ int main() {
 			wcout << endl;
 		}
 	}
+
+	else if (figure == 5) {
+		int size;
+		wcout << L"Фигура: решетка" << endl;
+		wcout << L"Размер: "; wcin >> size;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:";
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (i % 2 == 0 || j % 2 == 0) wcout << symbol << L" ";
+				else wcout << L"  ";
+			}
+			wcout << endl;
+		}
+	}
+
+	else if (figure == 6) {
+		int size;
+		wcout << L"Фигура: крестик" << endl;
+		wcout << L"Размер: "; wcin >> size;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:";
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (i == j || i + j == size - 1) wcout << symbol << L" ";
+				else wcout << L"  ";
+			}
+			wcout << endl;
+		}
+	}
+
+	else if (figure == 7) {
+		int size;
+		wcout << L"Фигура: плюс" << endl;
+		wcout << L"Размер: "; wcin >> size;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:" << endl;
+		int mid = size / 2;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (i == mid || j == mid) wcout << symbol << L" ";
+				else wcout << L"  ";
+			}
+			wcout << endl;
+		}
+	}
+
+	else if (figure == 7) {
+		int size;
+		wcout << L"Фигура: ромб" << endl;
+		wcout << L"Размер: "; wcin >> size;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:" << endl;
+		
+		
+	}
 	return 0;
 }
