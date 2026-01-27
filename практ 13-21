@@ -14,6 +14,10 @@ int main() {
 	wcout << L"4 - треугольник" << endl;
 	wcout << L"5 - решетка" << endl;
 	wcout << L"6 - крестик" << endl;
+	wcout << L"7 - плюс" << endl;
+	wcout << L"8 - ромб" << endl;
+	wcout << L"9 - змейка" << endl;
+	wcout << L"10 - рекурсивный квадрат" << endl;
 	wcout << L"Выберите фигуру: ";
 	int figure;
 	wcin >> figure;
@@ -99,7 +103,7 @@ int main() {
 	}
 
 	else if (figure == 4) {
-		wcout << L"Фигура: прямоугольник" << endl;
+		wcout << L"Фигура: треугольник" << endl;
 		wcout << L"1 - заполненный" << endl;
 		wcout << L"2 - пустой" << endl;
 		wcout << L"выберите тип: ";
