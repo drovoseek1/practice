@@ -180,14 +180,69 @@ int main() {
 		}
 	}
 
-	else if (figure == 7) {
+	else if (figure == 8) {
 		int size;
 		wcout << L"Фигура: ромб" << endl;
 		wcout << L"Размер: "; wcin >> size;
 		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
 		wcout << L"Результат:" << endl;
-		
+		int mid = size / 2;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if (abs(i - mid) + abs(j - mid) == mid)
+					wcout << symbol << L" ";
+				else
+					wcout << L"  ";
+
+			}
+			wcout << endl;
+		}
+
+
+	}
+
+	else if (figure == 9) {
+		int width, height;
+		wcout << L"Фигура: змейка" << endl;
+		wcout << L"Ширина:"; wcin >> width;
+		wcout << L"Высота: "; wcin >> height;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:" << endl;
+
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				if (i % 2 == 0) {
+					wcout << symbol << L" ";
+				}
+				else {
+					if ((i / 2) % 2 == 0 && j == width - 1) wcout << symbol << L" ";
+					else if ((i / 2) % 2 != 0 && j == 0) wcout << symbol << L" ";
+					else wcout << L"  ";
+				}
+			}
+			wcout << endl;
+		}
 		
 	}
+
+	else if (figure == 10) {
+		int size;
+		wcout << L"Фигура: рекурсивный квадрат" << endl;
+		wcout << L"Размер: "; wcin >> size;
+		wcout << L"текстура: "; wchar_t symbol; wcin >> symbol;
+		wcout << L"Результат:" << endl;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				int dist = i;
+				if (j < dist) dist = j;
+				if (size - 1 - i < dist) dist = size - 1 - i;
+				if (size - 1 - j < dist) dist = size - 1 - j;
+				if (dist % 2 == 0) wcout << symbol << L" ";
+				else wcout << L"  ";
+			}
+			wcout << endl;
+		}
+	}
+
 	return 0;
 }
